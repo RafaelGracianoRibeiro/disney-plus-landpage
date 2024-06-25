@@ -1,0 +1,36 @@
+.dispositivos{
+    padding: 5.6vw;
+    h2{
+        text-align: center;
+    }
+
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+
+
+            &__item{
+                text-align: center;
+                padding-top: 50px;
+
+                h4{
+                    margin-bottom: 24px;
+                }
+
+                img{
+                    max-width: 100%;
+                }
+
+                ul{
+                    list-style: none;
+
+                    li{
+                        padding: 2px 0;
+                    }
+                }
+            }
+
+        }
+    }
+

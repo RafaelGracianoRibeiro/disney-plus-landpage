@@ -6,6 +6,33 @@ document.addEventListener('DOMContentLoaded', function(){
     /* Com isso teremos um retorno de ARRAY com todos os botões */
     const buttons = document.querySelectorAll('[data-tab-button]');
 
+    /* Selecionando(criando um array com todos os elemnetod com o data referente) */
+    const quest = document.querySelectorAll('[data-faq-question]');
+
+    /* Selecionando a seção hero */
+    const heroSection = document.querySelectorAll('[data-section-hero]');
+    /* Apos instanciar a seção hero acessamos sua altura com esse codigo */
+    const alturaHero = heroSection.clientHeight;
+
+    /* Adicionando um evento que observa o scroll pelo display */
+    /* Com isso toda vez que ouver um scroll essa função é chamada */
+    window.addEventListener('scroll', function(){
+        /* Acessando a posição Y do scrol como retorno */
+        const scrollAtual = window.scrollY;
+
+        /* Se a posiçaõ do scrol for maior que a altura do hero*/
+        if(scrollAtual > 800){
+            console.log("Debug")
+
+            ocultHeader();
+        } 
+
+        else{
+            showHeader();
+        }
+        
+    })
+
 
     /* Definindo variavel i = 0, enquanto i for menor que o número de elemntos dentro do array button i ganha + 1 */
     for(let i = 0; i < buttons.length; i++){
@@ -50,7 +77,52 @@ document.addEventListener('DOMContentLoaded', function(){
         })
 
     }
+
+    /* Fazendo um for diferente para as perguntas da faq */
+    for(let i = 0; i < quest.length; i++){
+
+        /* Adicionando um evento que verifica se a pergunta da faq foi clicada */
+        quest[i].addEventListener('click', abreFechaFaq)
+
+    }
 })
+
+
+/* Criando uma função para a função que adiciona ou remove a classe --is-hidden no header */
+function ocultHeader(){
+    //Instanciano o elemento html header
+    const header = document.querySelector('header')
+
+    //Acessando a lista de classes do elemento header e adicionando uma classe
+    header.classList.add('header--is-hidden')
+}
+
+function showHeader(){
+    //Instanciando o elemento html header
+    const header = document.querySelector('header')
+
+    //Acessando a lista de classes do header e removendo uma classe
+    header.classList.remove('header--is-hidden')
+}
+
+/* Criando função para abrir ou fechar pergunta no faq, essa função tem o parametro por padrão o elemento selecionado */
+function abreFechaFaq(elemento){
+
+    /* Instanciando a classe que determina se a aba está aberta */
+    const classe = 'faq__questions__item--is-open'
+
+    /* Debug no console do elemento selecionado */
+    /* Quando clicado retorna a pergunta do faq que foi clicada e precisamos do "pai" dessa pergunta o li */
+    /* console.log(elemento.target) */
+
+    /* Para acessarmos o pai da pergunta que clicamos usamos esse atributo */
+    const elementoPai = elemento.target.parentNode
+
+    /* Acessando a lista de classes do elemento pai e adicionando/removendo a classe que determina se está aberto ou não */
+    /* O toggle verifica se a classe está ativa ou desativa e adiciona ou remove */
+    elementoPai.classList.toggle(classe)
+
+}
 
 /* Criando uma função, sem nenhum parametro dentro das parenteses pois não é nescessário */
 function hideAllTabs() {
@@ -79,7 +151,7 @@ function hideAllButtons(){
 
     }
 
-
+    
 
 
 }

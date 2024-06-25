@@ -1,0 +1,39 @@
+.image_text_container{
+    padding: 5.6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+    }
+
+    div{
+        padding: 0 2vw;
+
+        h2{
+            padding-bottom: 24px;
+        }
+    }
+
+    &--image-full-width {
+        display: block;
+        position: relative;
+
+        div{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            left: 50%;
+            width: calc(50% - 5.6vw);
+
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
