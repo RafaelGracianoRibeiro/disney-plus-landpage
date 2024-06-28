@@ -3,6 +3,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    
+    @media (max-width: 768px) {
+        display: block;
+    }
 
     img {
         max-width: 100%;
@@ -20,6 +24,8 @@
         display: block;
         position: relative;
 
+        
+
         div{
             position: absolute;
             top: 0;
@@ -30,6 +36,13 @@
             left: 50%;
             width: calc(50% - 5.6vw);
 
+            @media (max-width:768px) {
+                display: block;
+                position: relative;
+                top: auto;
+                left: auto;
+                width: 100%;
+            }
         }
 
         img {

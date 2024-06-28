@@ -45,11 +45,6 @@
                     padding: 8px 0;
                 }
 
-
-                ul{
-                    list-style: disc;
-                }
-
                 &__content{
                     display: flex;
                     flex-direction:column ;
@@ -59,6 +54,7 @@
 
                     &__item{
                         padding-bottom: 4px;
+                        list-style: disc;
                     }
                 }
             }

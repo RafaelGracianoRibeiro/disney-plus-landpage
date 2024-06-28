@@ -10,6 +10,10 @@
         gap: 24px;
         margin-top: 44px;
 
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
         &--is-active{
             display: grid;
         }
@@ -26,6 +30,11 @@
     &__tabs{
         display: flex;
         justify-content: center;
+        @media (max-width:768px) {
+            white-space:nowrap;
+            overflow-x: scroll;
+            padding-left: 18px;
+        }
 
         &__btn{
             color: vars.$txtSecundarioColor;
@@ -36,6 +45,11 @@
             text-transform: uppercase;
             margin: 0 1vw;
             border-bottom: 5px solid transparent;
+
+            @media (max-width:768px) {
+                font-size: 16px;
+                text-align: center;
+            }
 
             &--is-active{
                 border-bottom: 5px solid vars.$txtSecundarioColor;

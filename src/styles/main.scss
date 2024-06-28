@@ -53,10 +53,18 @@
 .title{
     @include title(40px);
 
+    @media (max-width:768px) {
+        font-size: 24px;;
+    }
+
 }
 
 .title--small{
     @include title(28px);
+
+    @media (max-width:768px) {
+        font-size: 22px;;
+    }
 
 }
 
